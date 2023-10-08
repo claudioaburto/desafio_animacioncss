@@ -1,0 +1,289 @@
+body {
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+
+/*movil */
+.grid-container {
+    display: grid;
+    grid-template-rows: 0.4fr 0.7fr 4fr 0.5fr;
+    grid-template-areas:
+        "navbar"
+        "filtro"
+        "main"
+        "pagimas"
+        "footer";
+}
+
+.navbar {
+    background-color: #2a61aa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: navbar;
+
+}
+
+#icon {
+    animation: motoi 3s linear infinite;
+}
+
+@keyframes motoi {
+    0% {
+        transform: translateX(-2.5em);
+    }
+    100% {
+        transform: translateX(45%);
+    }
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 1.3em;
+    margin-left: 1em;
+    font-weight: 200;
+}
+
+.menu {
+    display: none;
+}
+
+.filtro {
+    
+    background-color: #dedede;
+    grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro p {
+    margin: 0;
+    
+}
+
+.selector {
+    width: 80%;
+    height: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.movil {
+    margin-top: 2em;
+    width: 80%;
+    height: 365px;
+    border: 1px solid silver;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movil img {
+    width: 100%;
+    height: 283px;
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: 2s;
+}
+.movil img:hover{
+    filter: grayscale(0);
+    transform: scale(1.12);
+    filter: contrast(1);
+
+}
+
+button {
+    width: 35%;
+    height: 3em;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    background-color: #6495ED;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: 1s;
+    filter: grayscale(1);
+    
+}
+button:hover {
+    filter: grayscale(0);
+    
+
+}
+
+.escritorio {
+    display: none;
+}
+
+.pagimas {
+    margin-top: 2em;
+    grid-area: pagimas;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.number-pag {
+    padding: 1em;
+    border: 1px solid silver;
+    font-size: 1em;
+    color:black;
+    cursor: pointer;
+}
+.pagimas div.active{
+    background-color: #6495ED;
+    border: 1px solid black;
+    color: white;  
+}
+.pagimas div:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #183479;
+    margin-top: 2em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+}
+
+.footer h3,
+.footer a {
+    margin: 0.2em;
+    font-weight: 200;
+}
+
+.footer a {
+    font-size: 1.2em;
+    color: white;
+}
+
+.icono{
+    cursor: pointer;
+    transition: 1s; 
+    filter:saturate(0);
+    
+}
+.icono:hover{
+    transform: scale(2);
+    filter:saturate(1);
+    
+}
+
+
+.redes-sociales {
+    margin-top: 0.5em;
+}
+
+/* escritorio */
+
+@media (min-width: 976px) {
+    .grid-container {
+        grid-template-columns: 1fr 6fr;
+        grid-template-areas:
+            "navbar filtro"
+            "navbar main"
+            "navbar main"
+            "footer pagimas";
+    }
+
+    .filtro {
+        height: 4em;
+    }
+
+    .filtro p {
+        margin: 0.5em 0 0 0;
+    }
+
+    .mobile-icon {
+        display: none;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        margin: 1em 0 1em 0;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        cursor: pointer;
+        color: white;
+        padding: 0;
+    }
+
+    .menu li {
+        padding-bottom: 1em;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap: 10px 15px;
+        margin-left: 35px;
+        
+    }
+  
+    .escritorio {
+        display: flex;
+    }
+
+    .movil
+    .escritorio {
+        margin: auto;
+        margin-top: 1.5em;
+        gap: 0.1em;
+    }
+
+    button {
+        width: 40%;
+        height: 2em;
+        ;
+    }
+
+    button:hover {
+        background-color: #6495ED;
+    }
+
+    .footer {
+        margin: 0;
+        font-size: 1em;
+        text-align: center;
+    }
+    
+}
+
+
